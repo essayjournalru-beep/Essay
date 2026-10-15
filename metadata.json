@@ -1,0 +1,6 @@
+{
+  "name": "ЭССЕ — Платформа публикаций статей в жанре эссе | essay.ru",
+  "description": "Литературно-публицистический журнал авторских эссе на актуальные темы культуры, философии, науки, технологий и человека на essay.ru.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

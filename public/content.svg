@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" rx="26" fill="#E6D7BD"/>
+  <!-- Document outline -->
+  <path d="M36 24 C30 24 26 28 26 34 L26 86 C26 92 30 96 36 96 L58 96 C61 96 61 90 58 90 L38 90 C36 90 34 88 34 86 L34 34 C34 32 36 30 38 30 L76 30 C78 30 80 32 80 34 L80 54 C80 57 86 57 86 54 L86 34 C86 28 82 24 76 24 Z" fill="#C85D36"/>
+  <!-- Lines on document -->
+  <rect x="42" y="38" width="34" height="8" rx="4" fill="#C85D36"/>
+  <rect x="42" y="52" width="34" height="8" rx="4" fill="#C85D36"/>
+  <rect x="42" y="66" width="24" height="8" rx="4" fill="#C85D36"/>
+  <!-- Slanted pencil -->
+  <path d="M68 96 L98 66 C101 63 105 67 102 70 L72 100 C70 102 65 101 64 98 C64 97 66 97 68 96 Z" fill="#C85D36"/>
+</svg>

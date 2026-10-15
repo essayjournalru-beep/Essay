@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-serif: 'Literata', Georgia, serif;
+    
+    /* Warm High-Contrast Literary Color Tokens */
+    --color-paper: #FAF7F2;
+    --color-paper-card: #F4EFE6;
+    --color-sand: #E2D3BE;
+    --color-terracotta: #C85D36;
+    --color-terracotta-dark: #A94320;
+    --color-ink: #1F1914;
+    --color-ink-muted: #4A4036;
+    --color-sage: #5B7052;
+  }
+  
+  html {
+    font-family: var(--font-serif);
+    scroll-behavior: smooth;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  html.dark {
+    --color-paper: #1A1613;
+    --color-paper-card: #241E1A;
+    --color-sand: #3D352E;
+    --color-ink: #FAF7F2;
+    --color-ink-muted: #D1C7BD;
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+  }
+
+  html.font-size-normal {
+    font-size: 15px;
+  }
+  html.font-size-large {
+    font-size: 17px;
+  }
+  html.font-size-xlarge {
+    font-size: 19px;
+  }
+
+  body {
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+}
+
+/* 3 Typography choices for essay reading */
+html.font-family-literata,
+html.font-family-literata body,
+html.font-family-literata p,
+html.font-family-literata article,
+html.font-family-literata .font-serif-essay {
+  font-family: 'Literata', Georgia, serif !important;
+}
+
+html.font-family-merriweather,
+html.font-family-merriweather body,
+html.font-family-merriweather p,
+html.font-family-merriweather article,
+html.font-family-merriweather .font-serif-essay {
+  font-family: 'Merriweather', Georgia, serif !important;
+}
+
+html.font-family-sans,
+html.font-family-sans body,
+html.font-family-sans p,
+html.font-family-sans article,
+html.font-family-sans .font-serif-essay {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+}
+
+/* Custom subtle scrollbar with warm terracotta tint */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 93, 54, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 93, 54, 0.45);
+}

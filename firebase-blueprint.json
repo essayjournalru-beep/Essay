@@ -1,0 +1,139 @@
+{
+  "entities": {
+    "article": {
+      "title": "Article",
+      "description": "Literary essay and publication",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "slug": { "type": "string" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "rubricId": { "type": "string" },
+        "tags": { "type": "array" },
+        "coverImage": { "type": "string" },
+        "coverCaption": { "type": "string" },
+        "coverSource": { "type": "string" },
+        "author": { "type": "object" },
+        "readTimeMinutes": { "type": "number" },
+        "publishedAt": { "type": "string" },
+        "viewsCount": { "type": "number" },
+        "dailyViews": { "type": "object" },
+        "rating": { "type": "object" },
+        "sections": { "type": "array" },
+        "comments": { "type": "array" },
+        "isFeatured": { "type": "boolean" },
+        "isEditorPick": { "type": "boolean" },
+        "authorProfileId": { "type": "string" },
+        "status": { "type": "string" },
+        "isReviewedByEditor": { "type": "boolean" },
+        "reviewedAt": { "type": "string" },
+        "reviewerName": { "type": "string" },
+        "editorFeedback": { "type": "string" },
+        "submittedForReviewAt": { "type": "string" }
+      },
+      "required": ["id", "title", "slug", "rubricId", "publishedAt"]
+    },
+    "user": {
+      "title": "UserProfile",
+      "description": "Registered reader, author or editor profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string", "enum": ["reader", "author", "editor", "admin", "owner"] },
+        "avatar": { "type": "string" },
+        "bio": { "type": "string" },
+        "savedArticleIds": { "type": "array" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "email", "name", "role"]
+    },
+    "essaySubmission": {
+      "title": "EssaySubmission",
+      "description": "Manuscript submitted by reader or author to the editorial desk",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "authorName": { "type": "string" },
+        "authorEmail": { "type": "string" },
+        "authorBio": { "type": "string" },
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "rubricId": { "type": "string" },
+        "content": { "type": "string" },
+        "notes": { "type": "string" },
+        "status": { "type": "string", "enum": ["new", "reviewed", "accepted", "rejected"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "authorName", "authorEmail", "title", "content", "createdAt"]
+    },
+    "rubric": {
+      "title": "Rubric",
+      "description": "Thematic category of essays",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "icon": { "type": "string" },
+        "color": { "type": "string" },
+        "count": { "type": "number" }
+      },
+      "required": ["id", "title"]
+    },
+    "author": {
+      "title": "Author",
+      "description": "Essayist profile and bio",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "avatar": { "type": "string" },
+        "bio": { "type": "string" },
+        "socials": { "type": "object" }
+      },
+      "required": ["id", "name"]
+    },
+    "subscriber": {
+      "title": "NewsletterSubscriber",
+      "description": "Subscriber for fresh essay digests",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string" },
+        "subscribedAt": { "type": "string" },
+        "isActive": { "type": "boolean" }
+      },
+      "required": ["id", "email", "subscribedAt"]
+    }
+  },
+  "firestore": {
+    "/articles/{articleId}": {
+      "schema": "article",
+      "description": "Collection of all essay publications and editorial submissions"
+    },
+    "/users/{userId}": {
+      "schema": "user",
+      "description": "Reader and author profiles and permission roles"
+    },
+    "/rubrics/{rubricId}": {
+      "schema": "rubric",
+      "description": "Catalog of rubrics and thematic categories"
+    },
+    "/authors/{authorId}": {
+      "schema": "author",
+      "description": "Essay authors and columnists"
+    },
+    "/subscribers/{subscriberId}": {
+      "schema": "subscriber",
+      "description": "List of newsletter subscribers"
+    },
+    "/essay_submissions/{submissionId}": {
+      "schema": "essaySubmission",
+      "description": "Incoming essay manuscripts submitted to editors"
+    }
+  }
+}
